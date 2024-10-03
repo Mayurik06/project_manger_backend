@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser());
 
 app.use(cors({
-    origin:process.env.FRONTEND_URL ||'http://localhost:5173',
+    origin:process.env.FRONTEND_URL,
     methods:['GET','POST','PATCH','DELETE'],
     credentials:true
 }))
@@ -26,7 +26,7 @@ app.use('/api', routes);
 dbConnection();
 
 try{
-    app.listen(process.env.PORT, () => {
+    app.listen(process.env.PORT || 4000, () => {
         console.log(`Server running on http://localhost:${port}`);
       });
 }catch(err){
