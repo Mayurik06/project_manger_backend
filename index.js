@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser());
 
 app.use(cors({
-    origin:process.env.FRONTEND_URL || "project-management-system-nine-sooty.vercel.app",
+    origin:'*',
     methods:['GET','POST','PATCH','DELETE'],
     credentials:true
 }))
